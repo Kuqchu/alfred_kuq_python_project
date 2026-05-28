@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kuq — Relationship Conflict Diagnostic</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="themes.css">
+</head>
+<body>
+  <noscript>
+    <div class="noscript-message">
+      <h1>Kuq requires JavaScript to run.</h1>
+      <p>Please enable it in your browser settings.</p>
+    </div>
+  </noscript>
+
+  <!-- ===================== PAGE 1: LANDING ===================== -->
+  <section id="landing" class="page active">
+    <div class="landing-container">
+
+      <!-- Cramping Stick Figure -->
+      <div class="cramp-stage">
+        <div class="cramp-figure-wrapper">
+          <svg class="cramp-figure" viewBox="0 0 300 350" xmlns="http://www.w3.org/2000/svg">
+            <g class="cramp-head">
+              <circle cx="150" cy="40" r="22"/>
+            </g>
+            <g class="cramp-torso">
+              <line x1="150" y1="62" x2="150" y2="170"/>
+              <g class="cramp-arm-lu">
+                <line x1="140" y1="75" x2="110" y2="115"/>
+                <g class="cramp-arm-ll">
+                  <line x1="110" y1="115" x2="75" y2="145"/>
+                </g>
+              </g>
+              <g class="cramp-arm-ru">
+                <line x1="160" y1="75" x2="190" y2="120"/>
+                <g class="cramp-arm-rl">
+                  <line x1="190" y1="120" x2="220" y2="155"/>
+                </g>
+              </g>
+              <g class="cramp-leg-lu">
+                <line x1="140" y1="170" x2="120" y2="230"/>
+                <g class="cramp-leg-ll">
+                  <line x1="120" y1="230" x2="100" y2="290"/>
+                </g>
+              </g>
+              <g class="cramp-leg-ru">
+                <line x1="160" y1="170" x2="180" y2="225"/>
+                <g class="cramp-leg-rl">
+                  <line x1="180" y1="225" x2="200" y2="285"/>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </div>
+      </div>
+
+      <h1>Stop having the exact same fight.</h1>
+      <p class="landing-subtext">Kuq helps you untangle your relationship dynamics. Using four validated psychological frameworks, this 10-minute diagnostic reveals your hidden conflict patterns, attachment style, and what you actually need to feel secure.</p>
+      <p class="trust-badge">100% private. No accounts, no tracking, and your answers never leave your device.</p>
+      <button class="btn-primary" onclick="showPage('questions')">Start the PPRA Test</button>
+    </div>
+  </section>
+
+  <!-- ===================== PAGE 2: QUESTIONS ===================== -->
+  <section id="questions" class="page">
+    <header class="sticky-header">
+      <span class="logo">Kuq</span>
+      <div class="progress-bar">
+        <div id="progress-fill" class="progress-fill"></div>
+      </div>
+      <span id="question-counter" class="question-counter">Question 0 of 20</span>
+    </header>
+
+    <div id="restore-message" class="restore-message" style="display:none;">
+      Welcome back — your progress has been restored.
+    </div>
+
+    <div id="questions-container" class="questions-container"></div>
+  </section>
+
+  <!-- ===================== PAGE 3: RESULTS ===================== -->
+  <section id="results" class="page">
+    <div id="results-content" class="results-container"></div>
+    <div class="results-actions">
+      <button class="btn-secondary" onclick="startOver()">Start Over</button>
+    </div>
+  </section>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+  <script src="themes.js"></script>
+</body>
+</html>

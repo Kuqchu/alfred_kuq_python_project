@@ -1,0 +1,282 @@
+[
+  {
+    "timestamp": "2026-05-22T13:35:31.477976",
+    "consent": "yes",
+    "profile_name": "Unknown",
+    "answers": {
+      "1": 1,
+      "2": 1,
+      "3": 1,
+      "4": 1,
+      "5": 1,
+      "6": 1,
+      "7": 1,
+      "8": 1,
+      "9": 1,
+      "10": 1,
+      "11": 1,
+      "12": 1,
+      "13": 1,
+      "14": 0,
+      "15": 0,
+      "16": 0,
+      "17": 0,
+      "18": 0,
+      "19": 0,
+      "20": 0
+    },
+    "scores": {
+      "attachment_anxiety": 66,
+      "attachment_avoidance": 70,
+      "compromise": 53,
+      "domination": 69,
+      "submission": 100,
+      "separation": 79,
+      "avoidance_rpcs": 89,
+      "interactional_reactivity": 80,
+      "validating_gottman": 33,
+      "volatile_gottman": 100,
+      "avoidant_gottman": 100,
+      "hostile_gottman": 62,
+      "shame_isolation": 43,
+      "renewal": 14,
+      "hostility_atwc": 30
+    },
+    "layer_scores": {
+      "layer_1": {
+        "name": "Attachment Theory",
+        "highest": "attachment_avoidance",
+        "highest_score": 70,
+        "severity": "High"
+      },
+      "layer_2": {
+        "name": "RPCS",
+        "highest": "submission",
+        "highest_score": 100,
+        "severity": "High"
+      },
+      "layer_3": {
+        "name": "Gottman's Conflict Styles",
+        "highest": "volatile_gottman",
+        "highest_score": 100,
+        "severity": "High"
+      },
+      "layer_4": {
+        "name": "ATWC Scale",
+        "highest": "shame_isolation",
+        "highest_score": 43,
+        "severity": "Moderate"
+      }
+    }
+  },
+  {
+    "timestamp": "2026-05-22T13:42:32.558576",
+    "consent": "no",
+    "profile_name": "Unknown",
+    "answers": {
+      "1": 0.75,
+      "2": 0.5,
+      "3": 0.5,
+      "4": 0.5,
+      "5": 0.5,
+      "6": 0.5,
+      "7": 0.5,
+      "8": 0.5,
+      "9": 0.5,
+      "10": 0.5,
+      "11": 0.5,
+      "12": 0.5,
+      "13": 0.5,
+      "14": 0.5,
+      "15": 0.5,
+      "16": 0.5,
+      "17": 0.5,
+      "18": 0.5,
+      "19": 0.5,
+      "20": 0.5
+    },
+    "scores": {
+      "attachment_anxiety": 53,
+      "attachment_avoidance": 48,
+      "compromise": 40,
+      "domination": 39,
+      "submission": 48,
+      "separation": 50,
+      "avoidance_rpcs": 51,
+      "interactional_reactivity": 53,
+      "validating_gottman": 50,
+      "volatile_gottman": 50,
+      "avoidant_gottman": 50,
+      "hostile_gottman": 47,
+      "shame_isolation": 47,
+      "renewal": 0,
+      "hostility_atwc": 46
+    },
+    "layer_scores": {
+      "layer_1": {
+        "name": "Attachment Theory",
+        "highest": "attachment_anxiety",
+        "highest_score": 53,
+        "severity": "Moderate"
+      },
+      "layer_2": {
+        "name": "RPCS",
+        "highest": "interactional_reactivity",
+        "highest_score": 53,
+        "severity": "Moderate"
+      },
+      "layer_3": {
+        "name": "Gottman's Conflict Styles",
+        "highest": "validating_gottman",
+        "highest_score": 50,
+        "severity": "Moderate"
+      },
+      "layer_4": {
+        "name": "ATWC Scale",
+        "highest": "shame_isolation",
+        "highest_score": 47,
+        "severity": "Moderate"
+      }
+    }
+  },
+  {
+    "timestamp": "2026-05-22T14:14:42.682240",
+    "consent": "yes",
+    "profile_name": "Unknown",
+    "answers": {
+      "1": 0.5,
+      "2": 0.5,
+      "3": 0.5,
+      "4": 0.5,
+      "5": 0.5,
+      "6": 0.5,
+      "7": 0.5,
+      "8": 0.5,
+      "9": 0.5,
+      "10": 0.5,
+      "11": 0.5,
+      "12": 0.5,
+      "13": 0.5,
+      "14": 0.5,
+      "15": 0.5,
+      "16": 0.5,
+      "17": 0.5,
+      "18": 0.5,
+      "19": 0.5,
+      "20": 0.5
+    },
+    "scores": {
+      "attachment_anxiety": 48,
+      "attachment_avoidance": 49,
+      "compromise": 40,
+      "domination": 34,
+      "submission": 48,
+      "separation": 50,
+      "avoidance_rpcs": 50,
+      "interactional_reactivity": 50,
+      "validating_gottman": 50,
+      "volatile_gottman": 50,
+      "avoidant_gottman": 50,
+      "hostile_gottman": 43,
+      "shame_isolation": 45,
+      "renewal": 0,
+      "hostility_atwc": 45
+    },
+    "layer_scores": {
+      "layer_1": {
+        "name": "Attachment Theory",
+        "highest": "attachment_avoidance",
+        "highest_score": 49,
+        "severity": "Moderate"
+      },
+      "layer_2": {
+        "name": "RPCS",
+        "highest": "separation",
+        "highest_score": 50,
+        "severity": "Moderate"
+      },
+      "layer_3": {
+        "name": "Gottman's Conflict Styles",
+        "highest": "validating_gottman",
+        "highest_score": 50,
+        "severity": "Moderate"
+      },
+      "layer_4": {
+        "name": "ATWC Scale",
+        "highest": "shame_isolation",
+        "highest_score": 45,
+        "severity": "Moderate"
+      }
+    }
+  },
+  {
+    "timestamp": "2026-05-25T15:17:18.787553",
+    "consent": "yes",
+    "profile_name": "Unknown",
+    "answers": {
+      "1": 0.5,
+      "2": 0.5,
+      "3": 0.5,
+      "4": 0.5,
+      "5": 0.5,
+      "6": 0.5,
+      "7": 0.5,
+      "8": 0.5,
+      "9": 0.5,
+      "10": 0.5,
+      "11": 0.5,
+      "12": 0.5,
+      "13": 0.5,
+      "14": 0.5,
+      "15": 0.5,
+      "16": 0.5,
+      "17": 0.5,
+      "18": 0.5,
+      "19": 0.5,
+      "20": 0.5
+    },
+    "scores": {
+      "attachment_anxiety": 48,
+      "attachment_avoidance": 49,
+      "compromise": 40,
+      "domination": 34,
+      "submission": 48,
+      "separation": 50,
+      "avoidance_rpcs": 50,
+      "interactional_reactivity": 50,
+      "validating_gottman": 50,
+      "volatile_gottman": 50,
+      "avoidant_gottman": 50,
+      "hostile_gottman": 43,
+      "shame_isolation": 45,
+      "renewal": 0,
+      "hostility_atwc": 45
+    },
+    "layer_scores": {
+      "layer_1": {
+        "name": "Attachment Theory",
+        "highest": "attachment_avoidance",
+        "highest_score": 49,
+        "severity": "Moderate"
+      },
+      "layer_2": {
+        "name": "RPCS",
+        "highest": "separation",
+        "highest_score": 50,
+        "severity": "Moderate"
+      },
+      "layer_3": {
+        "name": "Gottman's Conflict Styles",
+        "highest": "validating_gottman",
+        "highest_score": 50,
+        "severity": "Moderate"
+      },
+      "layer_4": {
+        "name": "ATWC Scale",
+        "highest": "shame_isolation",
+        "highest_score": 45,
+        "severity": "Moderate"
+      }
+    }
+  }
+]

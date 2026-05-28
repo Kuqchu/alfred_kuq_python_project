@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Invincible Cramping Stick Figure</title>
+<style>
+  /* ============================================
+     BASE LAYOUT
+     ============================================ */
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #fff;
+    overflow: hidden;
+  }
+
+  .stage {
+    position: relative;
+    width: 300px;
+    height: 400px;
+  }
+
+  /* ============================================
+     SVG STICK FIGURE
+     All parts are grouped for independent animation.
+     Stroke: pure black, no fill.
+     ============================================ */
+  svg.figure {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+  }
+
+  svg.figure line,
+  svg.figure circle {
+    stroke: #000;
+    stroke-width: 4;
+    stroke-linecap: round;
+    fill: none;
+  }
+
+  /* ============================================
+     ANIMATION GROUPS
+     Each body part gets its own animation so they
+     move independently for that chaotic "cramping" look.
+     ============================================ */
+
+  /* HEAD — bobs and rotates */
+  .head {
+    transform-origin: 150px 50px;
+    animation: headBob 0.4s steps(2) infinite alternate;
+  }
+
+  /* TORSO — tilts left/right */
+  .torso {
+    transform-origin: 150px 60px;
+    animation: torsoTilt 0.6s steps(3) infinite alternate;
+  }
+
+  /* UPPER LEFT ARM — swings from shoulder */
+  .arm-left-upper {
+    transform-origin: 140px 75px;
+    animation: armLeftUpper 0.35s steps(2) infinite alternate;
+  }
+
+  /* LOWER LEFT ARM — bends at elbow */
+  .arm-left-lower {
+    transform-origin: 110px 115px;
+    animation: armLeftLower 0.3s steps(2) infinite alternate;
+  }
+
+  /* UPPER RIGHT ARM — swings from shoulder */
+  .arm-right-upper {
+    transform-origin: 160px 75px;
+    animation: armRightUpper 0.4s steps(2) infinite alternate;
+  }
+
+  /* LOWER RIGHT ARM — bends at elbow */
+  .arm-right-lower {
+    transform-origin: 190px 120px;
+    animation: armRightLower 0.35s steps(2) infinite alternate;
+  }
+
+  /* UPPER LEFT LEG — swings from hip */
+  .leg-left-upper {
+    transform-origin: 140px 170px;
+    animation: legLeftUpper 0.3s steps(2) infinite alternate;
+  }
+
+  /* LOWER LEFT LEG — bends at knee */
+  .leg-left-lower {
+    transform-origin: 120px 230px;
+    animation: legLeftLower 0.35s steps(2) infinite alternate;
+  }
+
+  /* UPPER RIGHT LEG — swings from hip */
+  .leg-right-upper {
+    transform-origin: 160px 170px;
+    animation: legRightUpper 0.35s steps(2) infinite alternate;
+  }
+
+  /* LOWER RIGHT LEG — bends at knee */
+  .leg-right-lower {
+    transform-origin: 180px 225px;
+    animation: legRightLower 0.3s steps(2) infinite alternate;
+  }
+
+  /* WHOLE FIGURE — bounces/slides on canvas */
+  .figure-wrapper {
+    animation: figureBounce 0.5s steps(3) infinite alternate;
+  }
+
+  /* ============================================
+     KEYFRAMES — THE "CRAMPING" DANCE
+     Jerky, snappy movements using steps() easing.
+     ============================================ */
+
+  /* Head bobs up/down and rotates slightly */
+  @keyframes headBob {
+    0%   { transform: translateY(0) rotate(0deg); }
+    30%  { transform: translateY(-8px) rotate(-12deg); }
+    60%  { transform: translateY(4px) rotate(8deg); }
+    100% { transform: translateY(-5px) rotate(-5deg); }
+  }
+
+  /* Torso tilts side to side and leans */
+  @keyframes torsoTilt {
+    0%   { transform: rotate(0deg) translateX(0); }
+    25%  { transform: rotate(-8deg) translateX(-5px); }
+    50%  { transform: rotate(5deg) translateX(3px); }
+    75%  { transform: rotate(-3deg) translateX(-2px); }
+    100% { transform: rotate(10deg) translateX(6px); }
+  }
+
+  /* Left upper arm swings wildly */
+  @keyframes armLeftUpper {
+    0%   { transform: rotate(0deg); }
+    25%  { transform: rotate(-60deg); }
+    50%  { transform: rotate(30deg); }
+    75%  { transform: rotate(-45deg); }
+    100% { transform: rotate(70deg); }
+  }
+
+  /* Left lower arm flails at elbow */
+  @keyframes armLeftLower {
+    0%   { transform: rotate(0deg); }
+    30%  { transform: rotate(-80deg); }
+    60%  { transform: rotate(40deg); }
+    100% { transform: rotate(-50deg); }
+  }
+
+  /* Right upper arm — opposite timing */
+  @keyframes armRightUpper {
+    0%   { transform: rotate(0deg); }
+    20%  { transform: rotate(55deg); }
+    50%  { transform: rotate(-35deg); }
+    80%  { transform: rotate(65deg); }
+    100% { transform: rotate(-20deg); }
+  }
+
+  /* Right lower arm */
+  @keyframes armRightLower {
+    0%   { transform: rotate(0deg); }
+    35%  { transform: rotate(70deg); }
+    65%  { transform: rotate(-45deg); }
+    100% { transform: rotate(55deg); }
+  }
+
+  /* Left upper leg kicks out */
+  @keyframes legLeftUpper {
+    0%   { transform: rotate(0deg); }
+    25%  { transform: rotate(25deg); }
+    50%  { transform: rotate(-15deg); }
+    75%  { transform: rotate(40deg); }
+    100% { transform: rotate(-10deg); }
+  }
+
+  /* Left lower leg bends at knee */
+  @keyframes legLeftLower {
+    0%   { transform: rotate(0deg); }
+    30%  { transform: rotate(-50deg); }
+    60%  { transform: rotate(25deg); }
+    100% { transform: rotate(-35deg); }
+  }
+
+  /* Right upper leg — offset timing */
+  @keyframes legRightUpper {
+    0%   { transform: rotate(0deg); }
+    20%  { transform: rotate(-30deg); }
+    50%  { transform: rotate(20deg); }
+    80%  { transform: rotate(-45deg); }
+    100% { transform: rotate(15deg); }
+  }
+
+  /* Right lower leg */
+  @keyframes legRightLower {
+    0%   { transform: rotate(0deg); }
+    35%  { transform: rotate(45deg); }
+    65%  { transform: rotate(-30deg); }
+    100% { transform: rotate(40deg); }
+  }
+
+  /* Whole figure bounces and slides */
+  @keyframes figureBounce {
+    0%   { transform: translateX(0) translateY(0); }
+    20%  { transform: translateX(-10px) translateY(-15px); }
+    40%  { transform: translateX(8px) translateY(5px); }
+    60%  { transform: translateX(-5px) translateY(-20px); }
+    80%  { transform: translateX(12px) translateY(0px); }
+    100% { transform: translateX(-3px) translateY(-10px); }
+  }
+
+  /* ============================================
+     AUDIO PLAYER (bottom center)
+     ============================================ */
+  .audio-controls {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 0.85rem;
+    color: #666;
+  }
+
+  .audio-controls button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #000;
+    background: #fff;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s;
+  }
+
+  .audio-controls button:hover {
+    background: #eee;
+  }
+
+  /* ============================================
+     RESPONSIVE
+     ============================================ */
+  @media (max-width: 480px) {
+    .stage {
+      width: 220px;
+      height: 300px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================================
+     STICK FIGURE (SVG)
+     Pure black strokes, no fill.
+     ~260px tall, centred on canvas.
+     ============================================ -->
+<div class="stage">
+  <div class="figure-wrapper">
+    <svg class="figure" viewBox="0 0 300 350" xmlns="http://www.w3.org/2000/svg">
+
+      <!-- HEAD (circle, r=22) -->
+      <g class="head">
+        <circle cx="150" cy="40" r="22"/>
+      </g>
+
+      <!-- TORSO (neck to hip) -->
+      <g class="torso">
+        <line x1="150" y1="62" x2="150" y2="170"/>
+
+        <!-- LEFT ARM: shoulder(140,75) → elbow(110,115) → hand -->
+        <g class="arm-left-upper">
+          <line x1="140" y1="75" x2="110" y2="115"/>
+          <g class="arm-left-lower">
+            <line x1="110" y1="115" x2="75" y2="145"/>
+          </g>
+        </g>
+
+        <!-- RIGHT ARM: shoulder(160,75) → elbow(190,120) → hand -->
+        <g class="arm-right-upper">
+          <line x1="160" y1="75" x2="190" y2="120"/>
+          <g class="arm-right-lower">
+            <line x1="190" y1="120" x2="220" y2="155"/>
+          </g>
+        </g>
+
+        <!-- LEFT LEG: hip(140,170) → knee(120,230) → foot -->
+        <g class="leg-left-upper">
+          <line x1="140" y1="170" x2="120" y2="230"/>
+          <g class="leg-left-lower">
+            <line x1="120" y1="230" x2="100" y2="290"/>
+          </g>
+        </g>
+
+        <!-- RIGHT LEG: hip(160,170) → knee(180,225) → foot -->
+        <g class="leg-right-upper">
+          <line x1="160" y1="170" x2="180" y2="225"/>
+          <g class="leg-right-lower">
+            <line x1="180" y1="225" x2="200" y2="285"/>
+          </g>
+        </g>
+      </g>
+
+    </svg>
+  </div>
+</div>
+
+<!-- ============================================
+     AUDIO PLAYER
+     Replace src with your chosen royalty-free track.
+     ============================================ -->
+<div class="audio-controls">
+  <button id="play-btn" onclick="toggleAudio()">▶</button>
+  <span id="audio-label">Play music</span>
+  <audio id="bg-music" loop preload="auto">
+    <source src="invincible-music.mp3" type="audio/mpeg">
+  </audio>
+</div>
+
+<script>
+  // Minimal JS — only for the play/pause button
+  function toggleAudio() {
+    const audio = document.getElementById('bg-music');
+    const btn = document.getElementById('play-btn');
+    const label = document.getElementById('audio-label');
+    if (audio.paused) {
+      audio.play();
+      btn.textContent = '⏸';
+      label.textContent = 'Playing';
+    } else {
+      audio.pause();
+      btn.textContent = '▶';
+      label.textContent = 'Play music';
+    }
+  }
+</script>
+
+</body>
+</html>
